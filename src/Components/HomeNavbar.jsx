@@ -1,6 +1,7 @@
 import React from "react";
-import NavbarLogo from "../../Assets/NavLogo.png";
-import Button from "../Utility Components/Button";
+import { Link, Router } from "react-router-dom";
+import NavbarLogo from "../Assets/NavLogo.png";
+import Button from "./Utility Components/Button";
 function HomeNavbar() {
   return (
     <nav className="navbar bg-[#242424] text-white flex justify-between py-[17px] px-[58px] items-center">
