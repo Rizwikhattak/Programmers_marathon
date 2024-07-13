@@ -3,6 +3,7 @@ import "./Navbar.css";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { MdOutlineCancel } from "react-icons/md";
 import { Link, Router } from "react-router-dom";
+import { GrLocation } from "react-icons/gr";
 import NavbarLogo from "../Assets/NavLogo.png";
 import Button from "./Utility Components/Button";
 
@@ -61,19 +62,33 @@ function HomeNavbar() {
                 </span>
               </li>
             </ul>
-            <div className="contact-info">
-              <h1>Contact Info</h1>
-              <div className="location">
-                <div className="logo-info"></div>
-                <div className="content-info"></div>
+            <div className="contact-info p-5">
+              <div className="heading-contact-info pb-5">
+                <h1 className="text-4xl font-bold">Contact Info</h1>
               </div>
-              <div className="call-number">
-                <div className="logo-info"></div>
-                <div className="content-info"></div>
+              <div className="location p-y-10 flex justify-between items-center">
+                <div className="logo-info  p-4 rounded-md bg-[#2f2e2e]">
+                  <GrLocation className="w-7 h-7" />
+                </div>
+                <div className="content-info">
+                  <p>Shamshabad,Rawalpindi</p>
+                </div>
               </div>
-              <div className="gmail">
-                <div className="logo-info"></div>
-                <div className="content-info"></div>
+              <div className="call-number p-y-3flex justify-between items-center ">
+                <div className="logo-info  p-4 rounded-md bg-[#2f2e2e]">
+                  <GrLocation className="w-7 h-7" />
+                </div>
+                <div className="content-info">
+                  <p>Shamshabad,Rawalpindi</p>
+                </div>
+              </div>
+              <div className="gmail p-y-3 flex justify-between items-center">
+                <div className="logo-info  p-4 rounded-md bg-[#2f2e2e]">
+                  <GrLocation className="w-7 h-7" />
+                </div>
+                <div className="content-info">
+                  <p>Shamshabad,Rawalpindi</p>
+                </div>
               </div>
             </div>
           </div>
