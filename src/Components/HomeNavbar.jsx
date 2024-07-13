@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Navbar.css";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { MdOutlineCancel } from "react-icons/md";
@@ -10,22 +10,32 @@ import NavbarLogo from "../Assets/NavLogo.png";
 import Button from "./Utility Components/Button";
 
 function HomeNavbar() {
+  const [toggleMenu, setToggleMenu] = useState(false);
+
   return (
-    <nav className="navbar w-full bg-[#242424] text-white flex justify-between pt-8 py-5 px-12 items-center">
-      <div className="navbar-logo">
+    <nav className="navbar bg-[#242424] text-white flex justify-between pt-8 py-5 px-12 items-center">
+      <div className="navbar-logo flex-grow">
         <Link to="/">
           <img src={NavbarLogo} alt="" />
         </Link>
       </div>
       <div className="main-pages flex-grow slg:flex-grow-[2] flex slg:block justify-center items-center">
         {/* Hamburger menu */}
-        <div className="hamburgr-menu fixed bg-[#242424] py-5 h-full w-80 right-0 top-0 slg:hidden">
-          <div className="hamburger-btn hidden">
-            <button className="border-[1px] border-white rounded-full p-3">
+        <div className="hamburgr-menu slg:hidden">
+          <div className="hamburger-btn ">
+            <button
+              className="border-[1px] border-white rounded-full p-3 hover:bg-[#FFAB17] transition duration-300 ease-in-out"
+              onClick={() => setToggleMenu(!toggleMenu)}
+            >
               <RxHamburgerMenu className="w-5 h-5" />
             </button>
           </div>
-          <div className="hamburger-menu-items relative">
+
+          <div
+            className={`hamburger-menu-items fixed bg-[#242424] py-5 h-full w-80 right-0 top-0 transform transition-transform duration-300 ease-in-out ${
+              toggleMenu ? "translate-x-0" : "translate-x-full"
+            } overflow-y-auto`}
+          >
             <div className="logo-cross-btn flex justify-between items-center gap-x-10 pt-7 pb-16">
               <div className="logo px-3 flex-grow-0">
                 <Link to="/">
@@ -33,7 +43,9 @@ function HomeNavbar() {
                 </Link>
               </div>
               <div className="btn px-3 flex-grow-[2]">
-                <MdOutlineCancel className="w-7 h-7" />
+                <button onClick={() => setToggleMenu(!toggleMenu)}>
+                  <MdOutlineCancel className="w-7 h-7" />
+                </button>
               </div>
             </div>
             <ul className="flex flex-col items-center justify-center text-center">
