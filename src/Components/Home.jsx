@@ -1,11 +1,13 @@
 import React from "react";
 import Button from "./Utility Components/Button";
 import homeImageMain from "../Assets/HomeImgMain.png";
+import homeImage_1 from "../Assets/HomeImg_1.png";
+import { FaCirclePlay } from "react-icons/fa6";
 
 const Home = () => {
   return (
-    <section className="Home-page text-white bg-[#242424] h-full w-full flex justify-center items-center px-14 py-24">
-      <div className="home-content px-5 w-[100%]  flex-grow-[2]">
+    <section className="Home-page text-white bg-[#242424] h-full w-full flex px-14 py-24 gap-x-5">
+      <div className="home-content pl-4 w-[100%] flex-grow-[2]">
         <div className="stick-content inline-block">
           <div
             className="stick bg-white text-[#FFAB17]"
@@ -14,37 +16,43 @@ const Home = () => {
             }}
           >
             <h1 className="flex bg-white items-center px-4 py-2 relative mr-4">
-              <span
-                className="h-3 w-3 bg-[#FFAB17] rounded-full mr-3"
-                style={
-                  {
-                    // clipPath: "circle(50% at 50% 50%)",
-                  }
-                }
-              ></span>{" "}
+              <span className="h-3 w-3 bg-[#FFAB17] rounded-full mr-3"></span>
               Welcome to nosie
             </h1>
           </div>
         </div>
         <div>
           <div className="left-home-content py-10">
-            <h1 className=" text-7xl font-bold py-5">
+            <h1 className="text-6xl font-bold py-5">
               IT-Solution For Optimize Systems.
             </h1>
-            <p className="text-xl">
+            <p className="text-xl py-5">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
               inventore blanditiis quod consectetur placeat labore optio maiores
               quos quo voluptas.
             </p>
-            <div className="buttons-home py-5">
-              <Button content="Contact Us" />
+            <div className="buttons-home py-10 flex gap-x-10">
+              <button>
+                <Button content="Contact Us" />
+              </button>
+              <button>
+                <FaCirclePlay className="w-14 h-14 bg-[#FFAB17] rounded-full hover:bg-white hover:text-[#FFAB17]  transition duration-300 ease-in-out " />
+              </button>
             </div>
           </div>
         </div>
       </div>
-      <div className="home-images w-100% flex-grow">
-        <div className="img-home-1">
-          <img src={homeImageMain} alt="" className=" w-full" />
+      <div className="home-images w-100% flex-grow relative">
+        <div className="img-home-2 absolute right-0 top-0 z-10">
+          <img src={homeImage_1} alt="" className="w-40" />
+        </div>
+        <div className="img-home-1 relative z-20 w-full">
+          <img src={homeImageMain} alt="" className="w-full" />
+        </div>
+        <div className="img-btn">
+          <button className="px-[1.69rem] py-[0.79rem] rounded-2xl bg-[#FFAB17] content-center text-center hover:bg-opacity-80 hover:bg-white hover:text-[#FFAB17]  transition duration-300 ease-in-out absolute left-0 top-80 z-30 bg-opacity-80">
+            25,200 Clients Solution
+          </button>
         </div>
       </div>
     </section>
