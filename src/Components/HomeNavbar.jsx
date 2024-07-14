@@ -30,6 +30,12 @@ function HomeNavbar() {
               <RxHamburgerMenu className="w-5 h-5" />
             </button>
           </div>
+          {toggleMenu && (
+            <div
+              className={`fixed inset-0 bg-[#14121E] bg-opacity-50 transition-opacity duration-300 ease-in-out`}
+              onClick={() => setToggleMenu(false)}
+            ></div>
+          )}
 
           <div
             className={`hamburger-menu-items fixed bg-[#242424] py-5 h-full w-80 right-0 top-0 transform transition-transform duration-300 ease-in-out ${
