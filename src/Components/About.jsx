@@ -4,6 +4,7 @@ import MainAboutImg from "../Assets/MainAboutImg.png";
 import headphones from "../Assets/headphones.png";
 import { IoMdCheckboxOutline } from "react-icons/io";
 import CountUp from "react-countup";
+
 const About = () => {
   const [state1, setState1] = useState();
 
@@ -25,12 +26,12 @@ const About = () => {
   }, []);
 
   return (
-    <section className="About-Section text-white bg-[#242424] h-full w-full flex px-12 py-24 gap-x-10">
-      <div className="about-images w-[50%] relative">
-        <div className="about-img-1 pl-5">
-          <img src={MainAboutImg} alt="" />
+    <section className="About-Section px-12 py-24 text-white bg-[#242424] h-full w-full flex flex-col slg:flex-row gap-y-10 slg:gap-x-10 justify-center slg:justify-normal">
+      <div className="about-images w-[100%] slg:w-[50%] relative flex flex-col justify-center">
+        <div className="about-img-1 pl-5 w-[100%]">
+          <img src={MainAboutImg} alt="" className="w-[100%]" />
         </div>
-        <div className="about-img-2 bg-white inline-block p-3 absolute top-72 left-0">
+        <div className="about-img-2 bg-white inline-block p-3 absolute top-56 sm:top-64 md:top-72 lg:top-80 left-0">
           <div className="black-border border-[15px] border-black py-5 pr-5">
             <div className="count-up-content flex gap-x-10">
               <div
@@ -40,11 +41,10 @@ const About = () => {
                     "polygon(0% 0%, 75% 0%, 100% 50%,75% 100%, 0% 100%)",
                 }}
               >
-                <h1 className="flex  items-center pl-4 pr-5 py-2 relative mr-4 text-2xl font-bold">
+                <h1 className="flex items-center pl-4 pr-5 py-2 relative mr-4 text-2xl font-bold">
                   {state1} +
                 </h1>
               </div>
-
               <img src={headphones} alt="" />
             </div>
             <div className="pt-5">
@@ -55,16 +55,16 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="about-content relative w-[50%] pr-10">
+      <div className="about-content relative w-[100%] slg:w-[50%] pr-10">
         <div className="content-img absolute right-0 top-0">
           <img src={CircleAboutImg} alt="" />
         </div>
         <div className="about-all-content">
-          <h1 className="flex text-[#FFAB17] text-2xl  items-center py-2 relative mr-4">
+          <h1 className="flex text-[#FFAB17] text-2xl items-center py-2 relative mr-4">
             <span className="h-3 w-3 bg-[#FFAB17] rounded-full mr-3"></span>
             About Our Company
           </h1>
-          <h1 className=" font-semibold text-4xl py-2 ">
+          <h1 className="font-semibold text-4xl py-2">
             About 26+ Experience Hands Such As Front Admin
           </h1>
           <p className="text-md py-3">
