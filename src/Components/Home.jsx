@@ -3,6 +3,7 @@ import Button from "./Utility Components/Button";
 import homeImageMain from "../Assets/HomeImgMain.png";
 import homeImage_1 from "../Assets/HomeImg_1.png";
 import { FaCirclePlay } from "react-icons/fa6";
+import "./Home.css";
 
 const Home = () => {
   return (
@@ -31,12 +32,12 @@ const Home = () => {
               inventore blanditiis quod consectetur placeat labore optio maiores
               quos quo voluptas.
             </p>
-            <div className="buttons-home py-10 flex gap-x-10">
+            <div className="buttons-home py-10 flex gap-x-10 relative">
               <button>
-                <Button content="Contact Us" />
+                <Button content="Contact Us" a />
               </button>
-              <button>
-                <FaCirclePlay className="w-14 h-14 bg-[#FFAB17] rounded-full hover:bg-white hover:text-[#FFAB17]  transition duration-300 ease-in-out " />
+              <button className="ripple-button">
+                <FaCirclePlay className="w-14 h-14 bg-[#FFAB17] text-white rounded-full hover:bg-white hover:text-[#FFAB17] transition duration-300 ease-in-out relative" />
               </button>
             </div>
           </div>
@@ -46,11 +47,9 @@ const Home = () => {
         <div className="img-home-2 absolute right-0 top-0 z-10">
           <img src={homeImage_1} alt="" className="w-40" />
         </div>
-        <div className="img-home-1 relative z-20 w-full">
+        <div className="img-home-1 hidden mlg:block h-full z-20 w-full relative">
           <img src={homeImageMain} alt="" className="w-full" />
-        </div>
-        <div className="img-btn">
-          <button className="px-[1.69rem] py-[0.79rem] rounded-2xl bg-[#FFAB17] content-center text-center hover:bg-opacity-80 hover:bg-white hover:text-[#FFAB17]  transition duration-300 ease-in-out absolute left-0 top-80 z-30 bg-opacity-80">
+          <button className="px-[1.69rem] py-[0.79rem] rounded-2xl bg-[#FFAB17] content-center text-center hover:bg-opacity-80 hover:bg-white hover:text-[#FFAB17]  transition duration-300 ease-in-out absolute left-0 bottom-[32%] z-30 bg-opacity-80">
             25,200 Clients Solution
           </button>
         </div>
