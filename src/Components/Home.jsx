@@ -54,6 +54,7 @@ const Home = () => {
           </button>
         </div>
       </div>
+      <hr />
     </section>
   );
 };
