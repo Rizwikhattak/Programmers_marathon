@@ -8,6 +8,7 @@ import ContactUs from "./Components/ContactUs";
 import Register from "./Components/Register";
 import Login from "./Components/Login";
 import Cards from "./Components/Cards";
+import Services from "./Components/Services";
 const App = () => {
   return (
     <>
@@ -23,6 +24,7 @@ const App = () => {
         </Routes>
         <About />
         <Cards />
+        <Services />
         <ContactUs />
       </Router>
     </>
