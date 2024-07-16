@@ -49,7 +49,7 @@ const Home = () => {
         </div>
         <div className="img-home-1 hidden mlg:block h-full z-20 w-full relative">
           <img src={homeImageMain} alt="" className="w-full" />
-          <button className="px-[1.69rem] py-[0.79rem] rounded-2xl bg-[#FFAB17] content-center text-center hover:bg-opacity-80 hover:bg-white hover:text-[#FFAB17]  transition duration-300 ease-in-out absolute left-0 bottom-[32%] z-30 bg-opacity-80">
+          <button className="px-[1.69rem] py-[0.79rem] rounded-2xl bg-[#FFAB17] content-center text-center hover:bg-opacity-80 hover:bg-white hover:text-[#FFAB17]  transition duration-300 ease-in-out absolute left-0 bottom-[33%] z-30 bg-opacity-80">
             25,200 Clients Solution
           </button>
         </div>
