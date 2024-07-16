@@ -7,6 +7,7 @@ import About from "./Components/About";
 import ContactUs from "./Components/ContactUs";
 import Register from "./Components/Register";
 import Login from "./Components/Login";
+import Cards from "./Components/Cards";
 const App = () => {
   return (
     <>
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/register" element={<Register />} />
         </Routes>
         <About />
+        <Cards />
         <ContactUs />
       </Router>
     </>

@@ -1,4 +1,5 @@
 import React from "react";
+import Card from "./Card";
 import {
   HiOutlineClipboardDocumentList,
   HiOutlineBuildingLibrary,
@@ -8,8 +9,41 @@ import { TbWorldCheck } from "react-icons/tb";
 import { ImStatsBars2 } from "react-icons/im";
 import { IoKey } from "react-icons/io5";
 
+const cardData = [
+  {
+    icon: HiOutlineBuildingLibrary,
+    title: "Solution",
+  },
+  {
+    icon: HiOutlineClipboardDocumentList,
+    title: "Service",
+  },
+  {
+    icon: HiSpeakerphone,
+    title: "Support",
+  },
+  {
+    icon: TbWorldCheck,
+    title: "Analysis",
+  },
+  {
+    icon: ImStatsBars2,
+    title: "Marketing",
+  },
+  {
+    icon: IoKey,
+    title: "Research",
+  },
+];
+
 const Cards = () => {
-  return <div></div>;
+  return (
+    <section className="cards flex justify-between px-12 py-5 gap-5 bg-[#242424]">
+      {cardData.map((currElem, currIndex) => {
+        return <Card text={currElem.title} Icon={currElem.icon} />;
+      })}
+    </section>
+  );
 };
 
 export default Cards;
