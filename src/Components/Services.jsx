@@ -24,11 +24,11 @@ const Services = () => {
       <div className="services-carousel p-5 flex gap-5">
         {carouselData.map((currElem, cur) => {
           return (
-            <div className="group carousel-card w-[33%] text-black bg-white rounded-lg transition duration-500 ease-in-out">
-              <div className="carImg block group-hover:hidden transition duration-500 ease-in-out">
+            <div className="group carousel-card w-[33%] text-black bg-white rounded-lg transition duration-500 ease-in-ou relativet">
+              <div className="carImg opacity-100 group-hover:opacity-0">
                 <img src={currElem.carouselImg} alt="" className="rounded-lg" />
               </div>
-              <div className="carousel-content p-5 block group-hover:hidden ">
+              <div className="carousel-content p-5 opacity-100 group-hover:opacity-0 ">
                 <div className="logo-content flex justify-center items-center gap-4 pb-4">
                   <div className="logo-car flex justify-center items-center bg-[#FFAB17]   rounded-full w-12 h-12 text-white">
                     <currElem.carouselIcon className="w-5 h-5" />
@@ -44,9 +44,9 @@ const Services = () => {
                 </div>
               </div>
               <div
-                className="hover-content hidden group-hover:block p-5 h-full w-full  text-white transition duration-500 ease-in-out rounded-lg bg-center bg-cover opacity-50 bg-[#FFAB17]"
+                className="hover-content p-5 h-full w-full absolute top-0 left-0 text-white transition duration-500 ease-in-out rounded-lg bg-[#FFAB17]"
                 style={{
-                  backgroundImage: `url(${currElem.carouselImg})`,
+                  //   backgroundImage: `url(${currElem.carouselImg})`,
                   backgroundColor: "#FFAB17",
                 }}
               >
