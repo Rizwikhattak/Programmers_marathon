@@ -3,7 +3,7 @@ import "./Navbar.css";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { MdOutlineCancel } from "react-icons/md";
 import { IoCallOutline } from "react-icons/io5";
-import { Link, Router } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { GrLocation } from "react-icons/gr";
 import { MdOutlineMailOutline } from "react-icons/md";
 import NavbarLogo from "../Assets/NavLogo.png";
@@ -19,10 +19,10 @@ function HomeNavbar() {
           <img src={NavbarLogo} alt="" />
         </Link>
       </div>
-      <div className="main-pages flex-grow slg:flex-grow-[2] flex slg:block justify-center items-center">
+      <div className="main-pages flex-grow lg:flex-grow-[2] flex lg:block justify-center items-center">
         {/* Hamburger menu */}
-        <div className="hamburgr-menu slg:hidden">
-          <div className="hamburger-btn ">
+        <div className="hamburgr-menu lg:hidden">
+          <div className="hamburger-btn">
             <button
               className="border-[1px] border-white rounded-full p-3 hover:bg-[#FFAB17] transition duration-300 ease-in-out"
               onClick={() => setToggleMenu(!toggleMenu)}
@@ -36,11 +36,10 @@ function HomeNavbar() {
               onClick={() => setToggleMenu(false)}
             ></div>
           )}
-
           <div
-            className={`hamburger-menu-items fixed bg-[#242424] py-5 h-full w-80 right-0 top-0 transform transition-transform duration-300 ease-in-out ${
+            className={`hamburger-menu-items fixed bg-[#242424] py-5 h-full w-52 md:w-80 right-0 top-0 transform transition-transform duration-300 ease-in-out ${
               toggleMenu ? "translate-x-0" : "translate-x-full"
-            } overflow-y-auto`}
+            } overflow-y-auto z-50`}
           >
             <div className="logo-cross-btn flex justify-between items-center gap-x-10 pt-7 pb-16">
               <div className="logo px-3 flex-grow-0">
@@ -54,68 +53,67 @@ function HomeNavbar() {
                 </button>
               </div>
             </div>
-            <ul className="flex flex-col items-center justify-center text-center">
-              <li className="h-full w-full border-t-[1px] border-b-[1px] border-white">
-                <span className="py-5 block hover:bg-[#FFAB17] transition duration-300 ease-in-out ">
+            <ul className="flex flex-col items-center justify-center text-center w-full">
+              <li className="w-full border-t-[1px] border-b-[1px] border-white">
+                <span className="py-5 block hover:bg-[#FFAB17] transition duration-300 ease-in-out">
                   <Link to="/">Home</Link>
                 </span>
               </li>
-
-              <li className="h-full w-full border-b-[1px] border-white">
-                <span className="py-5 block hover:bg-[#FFAB17] transition duration-300 ease-in-out ">
+              <li className="w-full border-b-[1px] border-white">
+                <span className="py-5 block hover:bg-[#FFAB17] transition duration-300 ease-in-out">
                   <Link to="/about">About</Link>
                 </span>
               </li>
-              <li className="h-full w-full border-b-[1px] border-white">
-                <span className="py-5 block hover:bg-[#FFAB17] transition duration-300 ease-in-out ">
+              <li className="w-full border-b-[1px] border-white">
+                <span className="py-5 block hover:bg-[#FFAB17] transition duration-300 ease-in-out">
                   <Link to="/contact">Contact</Link>
                 </span>
               </li>
-              <li className="h-full w-full border-b-[1px] border-white">
-                <span className="py-5 block hover:bg-[#FFAB17] transition duration-300 ease-in-out ">
+              <li className="w-full border-b-[1px] border-white">
+                <span className="py-5 block hover:bg-[#FFAB17] transition duration-300 ease-in-out">
                   <Link to="/login">Login</Link>
                 </span>
               </li>
-              <li className="h-full w-full border-b-[1px] border-white">
-                <span className="py-5 block hover:bg-[#FFAB17] transition duration-300 ease-in-out ">
+              <li className="w-full border-b-[1px] border-white">
+                <span className="py-5 block hover:bg-[#FFAB17] transition duration-300 ease-in-out">
                   <Link to="/register">Register</Link>
                 </span>
               </li>
             </ul>
-            <div className="contact-info p-5">
+            <div className="contact-info p-5 w-full">
               <div className="heading-contact-info pb-5">
-                <h1 className="text-4xl font-bold">Contact Info</h1>
+                <h1 className="text-xl md:text-4xl font-bold">Contact Info</h1>
               </div>
-              <div className="contact-all-information flex flex-col gap-6">
+              <div className="contact-all-information w-full flex flex-col gap-6">
                 <div className="location flex justify-start items-center">
                   <div className="logo-info hover:bg-[#FFAB17] transition duration-300 ease-in-out p-4 rounded-md bg-[#2f2e2e]">
-                    <GrLocation className="w-7 h-7" />
+                    <GrLocation className="w-3 h-3 md:w-7 md:h-7" />
                   </div>
                   <div className="content-info px-4">
-                    <p>Shamshabad,Rawalpindi</p>
+                    <p className="break-words">Shamshabad, Rawalpindi</p>
                   </div>
                 </div>
-                <div className="call-number flex justify-start items-center ">
-                  <div className="logo-info  p-4 rounded-md bg-[#2f2e2e] hover:bg-[#FFAB17] transition duration-300 ease-in-out ">
+                <div className="call-number flex justify-start items-center">
+                  <div className="logo-info p-4 rounded-md bg-[#2f2e2e] hover:bg-[#FFAB17] transition duration-300 ease-in-out">
                     <IoCallOutline className="w-7 h-7" />
                   </div>
                   <div className="content-info px-4">
-                    <p>+92 3145642492</p>
+                    <p className="break-words">+92 3145642492</p>
                   </div>
                 </div>
                 <div className="gmail flex justify-start items-center">
-                  <div className="logo-info  p-4 rounded-md bg-[#2f2e2e] hover:bg-[#FFAB17] transition duration-300 ease-in-out ">
+                  <div className="logo-info p-4 rounded-md bg-[#2f2e2e] hover:bg-[#FFAB17] transition duration-300 ease-in-out">
                     <MdOutlineMailOutline className="w-7 h-7" />
                   </div>
                   <div className="content-info px-4">
-                    <p>rizwikhattak4384@gmail.com</p>
+                    <p className="break-words">rizwikhattak 4384@g mail.com</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <ul className=" justify-evenly items-center hidden slg:flex">
+        <ul className="justify-evenly items-center hidden lg:flex">
           <li className="underline-animation">
             <Link to="/">Home</Link>
           </li>

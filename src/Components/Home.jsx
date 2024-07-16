@@ -7,7 +7,7 @@ import "./Home.css";
 
 const Home = () => {
   return (
-    <section className="Home-page text-white bg-[#242424] h-full w-full flex px-14 py-24 gap-x-5">
+    <section className="Home-page text-white bg-[#242424] h-full w-full flex px-5 mdsm:px-14 py-24 gap-x-5">
       <div className="home-content pl-4 w-[100%] flex-grow-[2]">
         <div className="stick-content inline-block">
           <div
@@ -24,10 +24,10 @@ const Home = () => {
         </div>
         <div>
           <div className="left-home-content py-10">
-            <h1 className="text-6xl font-bold py-5">
+            <h1 className=" text-4xl mdsm:text-6xl font-bold py-5">
               IT-Solution For Optimize Systems.
             </h1>
-            <p className="text-xl py-5">
+            <p className="text-md mdsm:text-xl py-5">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
               inventore blanditiis quod consectetur placeat labore optio maiores
               quos quo voluptas.
