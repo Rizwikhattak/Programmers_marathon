@@ -38,7 +38,7 @@ const cardData = [
 
 const Cards = () => {
   return (
-    <section className="cards flex justify-between px-12 py-5 gap-5 bg-[#242424]">
+    <section className="cards flex flex-wrap items-center justify-center px-12 py-5 gap-5 bg-[#242424]">
       {cardData.map((currElem, currIndex) => {
         return <Card text={currElem.title} Icon={currElem.icon} />;
       })}
