@@ -9,6 +9,7 @@ import Register from "./Components/Register";
 import Login from "./Components/Login";
 import Cards from "./Components/Cards";
 import Services from "./Components/Services";
+import Products from "./Components/Products";
 const App = () => {
   return (
     <>
@@ -25,6 +26,7 @@ const App = () => {
         <About />
         <Cards />
         <Services />
+        <Products />
         <ContactUs />
       </Router>
     </>
