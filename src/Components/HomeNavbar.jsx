@@ -8,6 +8,7 @@ import { GrLocation } from "react-icons/gr";
 import { MdOutlineMailOutline } from "react-icons/md";
 import NavbarLogo from "../Assets/NavLogo.png";
 import Button from "./Utility Components/Button";
+import ProgrammersMarathonLogo from "../Assets/progMaraLogo.png";
 
 function HomeNavbar() {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -16,7 +17,7 @@ function HomeNavbar() {
     <nav className="navbar bg-[#242424] text-white flex justify-between pt-8 py-5 px-12 items-center">
       <div className="navbar-logo flex-grow">
         <Link to="/">
-          <img src={NavbarLogo} alt="" />
+          <img src={ProgrammersMarathonLogo} alt="" className=" w-24" />
         </Link>
       </div>
       <div className="main-pages flex-grow lg:flex-grow-[2] flex lg:block justify-center items-center">

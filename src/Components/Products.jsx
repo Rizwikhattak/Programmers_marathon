@@ -4,11 +4,38 @@ import { FaAngleRight } from "react-icons/fa";
 import ProductImg_1 from "../Assets/ProductImg_1.jpeg";
 import ProductImg_2 from "../Assets/ProductImg_2.jpeg";
 import ProductImg_3 from "../Assets/ProductImg_3.jpeg";
+import Slider from "react-slick";
+
 const Products = () => {
   const [checkCurrent, setCheckCurrent] = useState(1);
 
   const handleClick = (index) => {
     setCheckCurrent(index);
+  };
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+
+    responsive: [
+      {
+        breakpoint: 960,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   return (
@@ -41,29 +68,31 @@ const Products = () => {
           )}
         </ul>
       </div>
-      <div className="product-images-section">
-        {productData.map((currElem, currIndex) => {
-          return (
-            <div className={`product-${currIndex + 1} `}>
-              <div>
-                <img src={currElem.img} alt="" />
-              </div>
-              <div className="product-decription flex justify-between items-center gap-5 rounded-2xl h-56 w-[22rem] p-10 bg-white text-black">
+      <div className="product-images-section overflow-x-hidden">
+        <Slider {...settings}>
+          {productData.map((currElem, currIndex) => {
+            return (
+              <div className={`product-${currIndex + 1} relative`}>
                 <div>
-                  <h1 className="font-bold text-xl pt-4">{currElem.title}</h1>
-                  <p className="text-sm font-md text-gray-500">
-                    {currElem.description}
-                  </p>
+                  <img src={currElem.img} alt="" />
                 </div>
-                <div className="group p-3 bg-black rounded-full group-hover:bg-[#FFAB17] transition duration-300 ease-in-out">
-                  <div className="bg-white p-1 text-black rounded-full">
-                    {<currElem.icon />}
+                <div className="product-decription flex justify-between items-center gap-5 rounded-2xl h-56 w-[22rem] p-10 bg-white text-black absolute top-56">
+                  <div>
+                    <h1 className="font-bold text-xl pt-4">{currElem.title}</h1>
+                    <p className="text-sm font-md text-gray-500">
+                      {currElem.description}
+                    </p>
+                  </div>
+                  <div className="group p-3 bg-black rounded-full hover:bg-[#FFAB17] transition duration-300 ease-in-out cursor-pointer">
+                    <div className="bg-white p-1 text-black rounded-full group-hover:text-[#FFAB17] transition duration-300 ease-in-out">
+                      {<currElem.icon />}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </Slider>
       </div>
     </section>
   );
