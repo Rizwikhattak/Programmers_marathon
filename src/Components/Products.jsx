@@ -6,6 +6,30 @@ import ProductImg_2 from "../Assets/ProductImg_2.jpeg";
 import ProductImg_3 from "../Assets/ProductImg_3.jpeg";
 import Slider from "react-slick";
 
+const CustomNextArrow = (props) => {
+  const { className, onClick } = props;
+  return (
+    <div className="custom-arrow-container custom-next-container">
+      <div
+        className={`${className} custom-arrow custom-next`}
+        onClick={onClick}
+      />
+    </div>
+  );
+};
+
+const CustomPrevArrow = (props) => {
+  const { className, onClick } = props;
+  return (
+    <div className="custom-arrow-container custom-prev-container">
+      <div
+        className={`${className} custom-arrow custom-prev`}
+        onClick={onClick}
+      />
+    </div>
+  );
+};
+
 const Products = () => {
   const [checkCurrent, setCheckCurrent] = useState(1);
 
@@ -19,7 +43,8 @@ const Products = () => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-
+    nextArrow: <CustomNextArrow />,
+    prevArrow: <CustomPrevArrow />,
     responsive: [
       {
         breakpoint: 960,
@@ -68,26 +93,13 @@ const Products = () => {
           )}
         </ul>
       </div>
-      <div className="product-images-section overflow-x-hidden">
+      <div className="product-images-section h-full w-full p-10">
         <Slider {...settings}>
           {productData.map((currElem, currIndex) => {
             return (
               <div className={`product-${currIndex + 1} relative`}>
-                <div>
-                  <img src={currElem.img} alt="" />
-                </div>
-                <div className="product-decription flex justify-between items-center gap-5 rounded-2xl h-56 w-[22rem] p-10 bg-white text-black absolute top-56">
-                  <div>
-                    <h1 className="font-bold text-xl pt-4">{currElem.title}</h1>
-                    <p className="text-sm font-md text-gray-500">
-                      {currElem.description}
-                    </p>
-                  </div>
-                  <div className="group p-3 bg-black rounded-full hover:bg-[#FFAB17] transition duration-300 ease-in-out cursor-pointer">
-                    <div className="bg-white p-1 text-black rounded-full group-hover:text-[#FFAB17] transition duration-300 ease-in-out">
-                      {<currElem.icon />}
-                    </div>
-                  </div>
+                <div className="">
+                  <img src={currElem.img} alt="" className="" />
                 </div>
               </div>
             );

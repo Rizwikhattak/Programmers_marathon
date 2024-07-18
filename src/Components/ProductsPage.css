@@ -1,4 +1,8 @@
 /* styles.css */
+.product-page {
+  overflow-x: hidden;
+}
+
 .underline-animationProducts {
   position: relative;
   display: inline-block;
@@ -29,4 +33,14 @@
 
 .buttons button {
   transition: color 0.3s ease-in-out;
+}
+
+.product-images-section {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.product-decription {
+  max-width: 22rem;
 }
