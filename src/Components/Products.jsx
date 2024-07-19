@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./ProductsPage.css";
-import { FaAngleRight } from "react-icons/fa";
+import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
 import ProductImg_1 from "../Assets/ProductImg_1.jpeg";
 import ProductImg_2 from "../Assets/ProductImg_2.jpeg";
 import ProductImg_3 from "../Assets/ProductImg_3.jpeg";
@@ -93,8 +93,8 @@ const Products = () => {
           )}
         </ul>
       </div>
-      <div className="product-images-section h-full w-full p-10">
-        <Slider {...settings}>
+      <div className="products-carousel">
+        <div className="product-images-section h-full w-full p-10 flex justify-between items-center gap-5">
           {productData.map((currElem, currIndex) => {
             return (
               <div className={`product-${currIndex + 1} relative`}>
@@ -104,7 +104,22 @@ const Products = () => {
               </div>
             );
           })}
-        </Slider>
+        </div>
+        <div className="flex justify-end items-center pr-40">
+          <div className="carousel-buttons flex items-center py-5">
+            <span className=" group left-carousel-btn p-3 mr-5 bg-white rounded-full flex justify-center items-center hover:bg-[#FFAB17] transition duration-300 ease-in-out">
+              <button className="left-btn p-1 bg-[#FFAB17] rounded-full text-white">
+                <FaAngleLeft />
+              </button>
+            </span>
+
+            <span className="left-carousel-btn p-3 bg-white rounded-full flex justify-center items-center">
+              <button className="left-btn p-1 bg-[#FFAB17] rounded-full text-white">
+                <FaAngleRight />
+              </button>
+            </span>
+          </div>
+        </div>
       </div>
     </section>
   );
