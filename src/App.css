@@ -29,7 +29,7 @@ h6 {
 }
 
 /* Slick Slide Margin */
-.services-carousel .slick-slide > div {
+.slick-slide > div {
   margin: 0 10px;
 }
 
